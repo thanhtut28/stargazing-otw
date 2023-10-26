@@ -14,9 +14,9 @@ const headingFont = localFont({
   variable: '--font-head',
 })
 
-const myFont = localFont({
-  src: './fonts/bahnschrift.ttf',
-})
+// const myFont = localFont({
+//   src: './fonts/bahnschrift.ttf',
+// })
 
 const PreviewProvider = lazy(() => import('components/PreviewProvider'))
 
@@ -29,12 +29,12 @@ export default function App({
     <>
       {draftMode ? (
         <PreviewProvider token={token}>
-          <main className={`${myFont.className} ${headingFont.variable}`}>
+          <main className={`${headingFont.className}`}>
             <Component {...pageProps} />
           </main>
         </PreviewProvider>
       ) : (
-        <main className={`${myFont.className} ${headingFont.variable}`}>
+        <main className={`${headingFont.className}`}>
           <Component {...pageProps} />
         </main>
       )}
