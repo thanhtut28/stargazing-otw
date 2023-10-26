@@ -6,7 +6,7 @@ import styled from 'styled-components'
 
 const OpenGraphPreview = lazy(() => import('./OpenGraphPreview'))
 
-const RatioSkeleton = styled(Skeleton).attrs({
+const RatioSkeleton = styled(Skeleton as any).attrs({
   radius: 3,
   shadow: 1,
   overflow: 'hidden',

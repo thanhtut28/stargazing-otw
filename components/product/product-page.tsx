@@ -36,20 +36,19 @@ export default function ProductPage(props: PostPageProps) {
 
       <Layout preview={preview} loading={loading}>
         <Container>
-          {/* <BlogHeader title={title} level={2} />
-          {preview && !post ? (
+          {preview && !product ? (
             <PostTitle>Loading…</PostTitle>
           ) : (
             <>
-              <PostHeader
+              {/* <PostHeader
                 title={post.title}
                 coverImage={post.coverImage}
                 date={post.date}
                 author={post.author}
               />
-              <PostBody content={post.content} />
+              <PostBody content={post.content} /> */}
             </>
-          )} */}
+          )}
         </Container>
       </Layout>
     </>

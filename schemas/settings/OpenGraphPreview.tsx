@@ -27,7 +27,7 @@ async function init(): Promise<SatoriOptions['fonts']> {
 // preload fonts and polyfill
 const fontsPromise = init()
 
-const OpenGraphSvg = styled(Card).attrs({
+const OpenGraphSvg = styled(Card as any).attrs({
   radius: 3,
   shadow: 1,
   overflow: 'hidden',

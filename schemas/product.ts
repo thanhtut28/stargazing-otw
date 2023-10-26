@@ -104,7 +104,7 @@ export default defineType({
               ],
             },
           ],
-        },
+        } as any,
       ],
     }),
   ],
