@@ -15,7 +15,7 @@ const headingFont = localFont({
 })
 
 const myFont = localFont({
-  src: './fonts/BAHNSCHRIFT.ttf',
+  src: './fonts/bahnschrift.ttf',
 })
 
 const PreviewProvider = lazy(() => import('components/PreviewProvider'))
