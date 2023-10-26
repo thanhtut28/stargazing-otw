@@ -11,6 +11,16 @@ const postFields = groq`
   "author": author->{name, picture},
 `
 
+const productFields = groq`
+  _id,
+  title,
+  pictures,
+  price,
+  soldOut,
+  "slug": slug.current,
+  variants,
+`
+
 export const settingsQuery = groq`*[_type == "settings"][0]`
 
 export const indexQuery = groq`
@@ -40,6 +50,12 @@ export const postBySlugQuery = groq`
 }
 `
 
+export const productBySlugQuery = groq`
+*[_type == "product" && slug.current == $slug][0] {
+  ${productFields}
+}
+`
+
 export interface Author {
   name?: string
   picture?: any
@@ -63,4 +79,23 @@ export interface Settings {
   ogImage?: {
     title?: string
   }
+}
+
+export interface Product {
+  _id: string
+  title: string
+  pictures: any[]
+  price: number
+  soldOut?: boolean
+  variants: Variant[]
+}
+
+export interface Variant {
+  color?: string
+  sizes?: Size[]
+}
+
+export interface Size {
+  size?: string
+  stock: boolean
 }

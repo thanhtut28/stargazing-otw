@@ -7,6 +7,8 @@ import {
   postSlugsQuery,
   type Settings,
   settingsQuery,
+  Product,
+  productBySlugQuery,
 } from 'lib/sanity.queries'
 import { createClient, type SanityClient } from 'next-sanity'
 
@@ -60,4 +62,11 @@ export async function getPostAndMoreStories(
   slug: string,
 ): Promise<{ post: Post; morePosts: Post[] }> {
   return await client.fetch(postAndMoreStoriesQuery, { slug })
+}
+
+export async function getProductBySlug(
+  client: SanityClient,
+  slug: string,
+): Promise<Product> {
+  return (await client.fetch(productBySlugQuery, { slug })) || ({} as any)
 }

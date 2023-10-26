@@ -1,16 +1,22 @@
-import { AppProps } from 'next/app'
-import { lazy } from 'react'
-import localFont from 'next/font/local'
 import 'tailwindcss/tailwind.css'
+
+import { AppProps } from 'next/app'
+import localFont from 'next/font/local'
+import { lazy } from 'react'
 
 export interface SharedPageProps {
   draftMode: boolean
   token: string
 }
 
-const headingFont = localFont({ src: '../public/fonts/Killig.ttf' })
+const headingFont = localFont({
+  src: '../public/fonts/Killig.ttf',
+  variable: '--font-head',
+})
 
-const myFont = localFont({ src: '../public/fonts/BAHNSCHRIFT.ttf' })
+const myFont = localFont({
+  src: '../public/fonts/BAHNSCHRIFT.ttf',
+})
 
 const PreviewProvider = lazy(() => import('components/PreviewProvider'))
 
@@ -23,12 +29,12 @@ export default function App({
     <>
       {draftMode ? (
         <PreviewProvider token={token}>
-          <main className={myFont.className}>
+          <main className={`${myFont.className} ${headingFont.variable}`}>
             <Component {...pageProps} />
           </main>
         </PreviewProvider>
       ) : (
-        <main className={myFont.className}>
+        <main className={`${myFont.className} ${headingFont.variable}`}>
           <Component {...pageProps} />
         </main>
       )}

@@ -8,7 +8,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        heading: ['var(--font-head)'],
+      },
       colors: {
+        body: '#111111',
+        pearl: '#DFDFDF',
+
+        secondary: '#979797',
         'accent-1': '#FAFAFA',
         'accent-2': '#EAEAEA',
         'accent-7': '#333',

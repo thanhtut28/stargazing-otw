@@ -14,6 +14,18 @@ export default defineType({
     }),
 
     defineField({
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'name',
+        maxLength: 96,
+        isUnique: (value, context) => context.defaultIsUnique(value, context),
+      },
+      validation: (rule) => rule.required(),
+    }),
+
+    defineField({
       name: 'price',
       title: 'Price',
       type: 'number',
@@ -46,6 +58,7 @@ export default defineType({
       name: 'variants',
       title: 'Variants',
       type: 'array',
+      validation: (rule) => rule.required(),
       of: [
         {
           type: 'object',
@@ -102,9 +115,9 @@ export default defineType({
       media: 'pictures.0.asset',
     },
     prepare({ title, variants, media }) {
-      const colors = variants.map((v) => v.color)
+      const colors = variants?.map((v) => v.color)
 
-      return { title, media, subtitle: colors.join(', ') }
+      return { title, media, subtitle: colors?.join(', ') }
     },
   },
 })
