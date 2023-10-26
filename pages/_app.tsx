@@ -18,6 +18,8 @@ const myFont = localFont({
   src: './fonts/bat.ttf',
 })
 
+//
+
 const PreviewProvider = lazy(() => import('components/PreviewProvider'))
 
 export default function App({
