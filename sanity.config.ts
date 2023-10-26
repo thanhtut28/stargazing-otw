@@ -18,6 +18,7 @@ import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
 import { previewUrl } from 'sanity-plugin-iframe-pane/preview-url'
 import authorType from 'schemas/author'
 import postType from 'schemas/post'
+import productType from 'schemas/product'
 import settingsType from 'schemas/settings'
 
 const title =
@@ -30,7 +31,7 @@ export default defineConfig({
   title,
   schema: {
     // If you want more content types, you can add them to this array
-    types: [authorType, postType, settingsType],
+    types: [authorType, postType, productType, settingsType],
   },
   plugins: [
     deskTool({
@@ -41,13 +42,14 @@ export default defineConfig({
     // Configures the global "new document" button, and document actions, to suit the Settings document singleton
     settingsPlugin({ type: settingsType.name }),
     // Add the "Open preview" action
-    previewUrl({
-      base: DRAFT_MODE_ROUTE,
-      urlSecretId: previewSecretId,
-      matchTypes: [postType.name, settingsType.name],
-    }),
+    // previewUrl({
+    //   base: DRAFT_MODE_ROUTE,
+    //   urlSecretId: previewSecretId,
+    //   matchTypes: [postType.name, settingsType.name],
+    // }),
     // Add an image asset source for Unsplash
     unsplashImageAsset(),
+
     // Vision lets you query your content with GROQ in the studio
     // https://www.sanity.io/docs/the-vision-plugin
     visionTool({ defaultApiVersion: apiVersion }),

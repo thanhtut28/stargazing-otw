@@ -1,4 +1,4 @@
-import PostPage from 'components/PostPage'
+import PostPage from 'components/post/PostPage'
 import PreviewPostPage from 'components/PreviewPostPage'
 import { readToken } from 'lib/sanity.api'
 import {
