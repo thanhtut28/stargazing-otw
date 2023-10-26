@@ -84,6 +84,7 @@ export interface Settings {
 export interface Product {
   _id: string
   title: string
+  slug: string
   pictures: any[]
   price: number
   soldOut?: boolean
