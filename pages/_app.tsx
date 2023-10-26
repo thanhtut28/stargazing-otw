@@ -10,12 +10,12 @@ export interface SharedPageProps {
 }
 
 const headingFont = localFont({
-  src: '/fonts/Killig.ttf',
+  src: './fonts/Killig.ttf',
   variable: '--font-head',
 })
 
 const myFont = localFont({
-  src: '/fonts/BAHNSCHRIFT.ttf',
+  src: './fonts/BAHNSCHRIFT.ttf',
 })
 
 const PreviewProvider = lazy(() => import('components/PreviewProvider'))
