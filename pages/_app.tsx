@@ -10,13 +10,13 @@ export interface SharedPageProps {
 }
 
 const headingFont = localFont({
-  src: './fonts/Killig.ttf',
+  src: './fonts/killig.ttf',
   variable: '--font-head',
 })
 
-// const myFont = localFont({
-//   src: './fonts/bahnschrift.ttf',
-// })
+const myFont = localFont({
+  src: './fonts/bat.ttf',
+})
 
 const PreviewProvider = lazy(() => import('components/PreviewProvider'))
 
@@ -29,12 +29,12 @@ export default function App({
     <>
       {draftMode ? (
         <PreviewProvider token={token}>
-          <main className={`${headingFont.className}`}>
+          <main className={`${myFont.className} ${headingFont.variable}`}>
             <Component {...pageProps} />
           </main>
         </PreviewProvider>
       ) : (
-        <main className={`${headingFont.className}`}>
+        <main className={`${myFont.className} ${headingFont.variable}`}>
           <Component {...pageProps} />
         </main>
       )}
