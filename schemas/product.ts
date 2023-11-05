@@ -55,8 +55,8 @@ export default defineType({
       name: 'soldout',
       title: 'Sold Out',
       type: 'boolean',
-      hidden: ({ parent, currentUser, value }) =>
-        parent.variants?.some((v) => v.sizes?.some((s) => s.stock)),
+      // readOnly: ({ parent, currentUser, value }) =>
+      //   !parent.variants?.some((v) => v.sizes?.some((s) => s.stock)),
       initialValue: false,
     }),
 

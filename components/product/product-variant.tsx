@@ -18,7 +18,7 @@ export default function ProductVariant({ product }: Props) {
       <div className="flex w-full flex-col justify-between lg:text-right">
         <ProductHeading {...product} />
 
-        <div className="h-[1px] w-full bg-disabled lg:hidden my-5" />
+        <div className="h-[1px] w-full bg-disabled lg:hidden my-3 opacity-30" />
 
         <div className="py-4">
           <ProductColor
@@ -39,11 +39,11 @@ type HeadingProps = Partial<Product>
 const ProductHeading = ({ name, description }: HeadingProps) => {
   return (
     <div className="py-4">
-      <h2 className="font-heading text-7xl pl-5 leading-tight md:text-8xl lg:text-9xl lg:[word-spacing:99rem]">
+      <h2 className="font-heading text-6xl pl-5 leading-tight md:text-8xl lg:text-9xl lg:[word-spacing:99rem]">
         {name}
       </h2>
       {description && (
-        <div className="flex lg:justify-end py-5">
+        <div className="flex lg:justify-end py-2">
           <p className="text-sm font-light text-secondary max-w-lg lg:w-1/2 lg:min-w-[16rem]">
             {description}
           </p>

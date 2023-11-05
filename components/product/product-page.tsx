@@ -20,7 +20,7 @@ export default function ProductPage({
   loading,
   settings,
 }: PostPageProps) {
-  const source = product.pictures[0]?.asset?._ref
+  const source = product?.pictures?.[0]?.asset?._ref
 
   const slug = product?.slug
 
@@ -30,7 +30,7 @@ export default function ProductPage({
 
   return (
     <Container>
-      <ProductImage source={source} />
+      <ProductImage source={source} soldout={product.soldout} />
       <DetailsWrapper>
         <ProductVariant product={product} />
 

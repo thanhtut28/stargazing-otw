@@ -17,7 +17,7 @@ const productFields = groq`
   pictures,
   price,
   description,
-  soldOut,
+  soldout,
   "slug": slug.current,
   variants,
 `
@@ -89,7 +89,7 @@ export interface Product {
   description?: string
   pictures: any[]
   price: number
-  soldOut?: boolean
+  soldout?: boolean
   variants: Variant[]
 }
 
