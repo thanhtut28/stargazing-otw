@@ -13,9 +13,10 @@ const postFields = groq`
 
 const productFields = groq`
   _id,
-  title,
+  name,
   pictures,
   price,
+  description,
   soldOut,
   "slug": slug.current,
   variants,
@@ -83,8 +84,9 @@ export interface Settings {
 
 export interface Product {
   _id: string
-  title: string
+  name: string
   slug: string
+  description?: string
   pictures: any[]
   price: number
   soldOut?: boolean

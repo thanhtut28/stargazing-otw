@@ -1,5 +1,6 @@
 import PostPage from 'components/post/PostPage'
 import PreviewPostPage from 'components/PreviewPostPage'
+import ProductPage from 'components/product/product-page'
 import { readToken } from 'lib/sanity.api'
 import {
   getAllPostsSlugs,
@@ -24,15 +25,7 @@ interface Query {
 export default function ProjectSlugRoute(props: PageProps) {
   const { settings, product, draftMode } = props
 
-  //   if (draftMode) {
-  //     return (
-  //       <PreviewPostPage post={post} morePosts={morePosts} settings={settings} />
-  //     )
-  //   }
-
-  //   return <PostPage post={post} morePosts={morePosts} settings={settings} />
-  console.log(product)
-  return <h1>Hello</h1>
+  return <ProductPage product={product} settings={settings} />
 }
 
 export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
