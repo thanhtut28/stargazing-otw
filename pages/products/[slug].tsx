@@ -4,6 +4,7 @@ import ProductPage from 'components/product/product-page'
 import { readToken } from 'lib/sanity.api'
 import {
   getAllPostsSlugs,
+  getAllProductsSlugs,
   getClient,
   getPostAndMoreStories,
   getProductBySlug,
@@ -55,11 +56,10 @@ export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
 }
 
 export const getStaticPaths = async () => {
-  const slugs = await getAllPostsSlugs()
+  const slugs = await getAllProductsSlugs()
 
   return {
-    // paths: slugs?.map(({ slug }) => `/posts/${slug}`) || [],
-    paths: [],
+    paths: slugs?.map(({ slug }) => `/products/${slug}`) || [],
     fallback: 'blocking',
   }
 }

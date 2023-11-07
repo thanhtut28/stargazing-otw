@@ -14,6 +14,23 @@ export default defineType({
     }),
 
     defineField({
+      name: 'itemType',
+      title: 'Item Type',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+
+    defineField({
+      name: 'releaseDate',
+      title: 'Release Date',
+      type: 'date',
+      options: {
+        dateFormat: 'DD-MMMM-YYYY',
+      },
+      validation: (rule) => rule.required(),
+    }),
+
+    defineField({
       name: 'description',
       title: 'Description',
       type: 'text',

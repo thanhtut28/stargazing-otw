@@ -3,6 +3,7 @@ import { useState } from 'react'
 
 import ProductColor from './product-color'
 import ProductSize from './product-size'
+import ProductDate from './product-date'
 
 interface Props {
   product: Product
@@ -36,15 +37,29 @@ export default function ProductVariant({ product }: Props) {
 
 type HeadingProps = Partial<Product>
 
-const ProductHeading = ({ name, description }: HeadingProps) => {
+const ProductHeading = ({
+  name,
+  description,
+  itemType,
+  releaseDate,
+}: HeadingProps) => {
   return (
     <div className="py-4">
-      <h2 className="font-heading text-6xl pl-5 leading-tight md:text-8xl lg:text-9xl lg:[word-spacing:99rem]">
-        {name}
-      </h2>
+      <div className="pl-5">
+        <h2 className="font-heading text-6xl leading-tight md:text-8xl lg:text-9xl lg:[word-spacing:99rem]">
+          {name}
+        </h2>
+        <div className="text-secondary flex flex-col ml-2 -mt-1 lg:mr-5">
+          <h6 className="uppercase font-semibold">{itemType}</h6>
+          <p className="text-xs font-light">
+            <ProductDate dateString={releaseDate} />
+          </p>
+        </div>
+      </div>
+
       {description && (
-        <div className="flex lg:justify-end py-2">
-          <p className="text-sm font-light text-secondary max-w-lg lg:w-1/2 lg:min-w-[16rem]">
+        <div className="flex lg:justify-end pt-10 pb-5">
+          <p className="text-sm font-light  max-w-lg lg:w-1/2 lg:min-w-[16rem]">
             {description}
           </p>
         </div>

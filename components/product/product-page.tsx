@@ -6,6 +6,7 @@ import DetailsWrapper from './product-details-wrapper'
 import ProductImage from './product-image'
 import ProductPrice from './product-price'
 import ProductVariant from './product-variant'
+import ProductPageHead from './product-page-head'
 
 export interface PostPageProps {
   preview?: boolean
@@ -20,7 +21,8 @@ export default function ProductPage({
   loading,
   settings,
 }: PostPageProps) {
-  const source = product?.pictures?.[0]?.asset?._ref
+  const [firstImage, ...images] = product?.pictures
+  const source = firstImage?.asset?._ref
 
   const slug = product?.slug
 
@@ -29,14 +31,17 @@ export default function ProductPage({
   }
 
   return (
-    <Container>
-      <ProductImage source={source} soldout={product.soldout} />
-      <DetailsWrapper>
-        <ProductVariant product={product} />
+    <>
+      <ProductPageHead product={product} settings={settings} />
+      <Container>
+        <ProductImage source={source} soldout={product.soldout} />
+        <DetailsWrapper>
+          <ProductVariant product={product} />
 
-        {/* price column */}
-        <ProductPrice price={product.price} />
-      </DetailsWrapper>
-    </Container>
+          {/* price column */}
+          <ProductPrice price={product.price} />
+        </DetailsWrapper>
+      </Container>
+    </>
   )
 }

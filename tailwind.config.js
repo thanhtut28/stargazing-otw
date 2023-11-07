@@ -13,6 +13,7 @@ module.exports = {
       },
       colors: {
         black: '#111111',
+        dark: '#000000',
         white: '#DFDFDF',
         banner: '#A1A1A1',
         secondary: '#959595',

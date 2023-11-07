@@ -9,6 +9,8 @@ import {
   settingsQuery,
   Product,
   productBySlugQuery,
+  productSlugsQuery,
+  showcaseQuery,
 } from 'lib/sanity.queries'
 import { createClient, type SanityClient } from 'next-sanity'
 
@@ -44,9 +46,19 @@ export async function getAllPosts(client: SanityClient): Promise<Post[]> {
   return (await client.fetch(indexQuery)) || []
 }
 
+export async function getAllProducts(client: SanityClient): Promise<Product[]> {
+  return (await client.fetch(showcaseQuery)) || []
+}
+
 export async function getAllPostsSlugs(): Promise<Pick<Post, 'slug'>[]> {
   const client = getClient()
   const slugs = (await client.fetch<string[]>(postSlugsQuery)) || []
+  return slugs.map((slug) => ({ slug }))
+}
+
+export async function getAllProductsSlugs(): Promise<Pick<Product, 'slug'>[]> {
+  const client = getClient()
+  const slugs = (await client.fetch<string[]>(productSlugsQuery)) || []
   return slugs.map((slug) => ({ slug }))
 }
 

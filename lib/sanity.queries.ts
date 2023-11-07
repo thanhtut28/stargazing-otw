@@ -14,6 +14,8 @@ const postFields = groq`
 const productFields = groq`
   _id,
   name,
+  itemType,
+  releaseDate,
   pictures,
   price,
   description,
@@ -29,6 +31,12 @@ export const indexQuery = groq`
   ${postFields}
 }`
 
+export const showcaseQuery = groq`
+*[_type == "product"] | order(releaseDate desc) {
+  ${productFields}
+}
+`
+
 export const postAndMoreStoriesQuery = groq`
 {
   "post": *[_type == "post" && slug.current == $slug] | order(_updatedAt desc) [0] {
@@ -43,6 +51,9 @@ export const postAndMoreStoriesQuery = groq`
 
 export const postSlugsQuery = groq`
 *[_type == "post" && defined(slug.current)][].slug.current
+`
+export const productSlugsQuery = groq`
+*[_type == 'product' && defined(slug.current)][].slug.current
 `
 
 export const postBySlugQuery = groq`
@@ -86,6 +97,8 @@ export interface Product {
   _id: string
   name: string
   slug: string
+  itemType: string
+  releaseDate: string
   description?: string
   pictures: any[]
   price: number
