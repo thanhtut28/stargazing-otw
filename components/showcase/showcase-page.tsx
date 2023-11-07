@@ -1,12 +1,13 @@
 import { ArrowLongRightIcon } from '@heroicons/react/24/solid'
 import Button from 'components/utils/button'
 import type { Product, Settings } from 'lib/sanity.queries'
+import { useRouter } from 'next/router'
 
 import Container from './showcase-container'
 import ShowcasePageHead from './showcase-page-head'
 import ProductImage from './showcase-product-image'
+import ImageGallery from '../utils/image-gallery'
 import Title from './showcase-title'
-import { useRouter } from 'next/router'
 
 export interface IndexPageProps {
   preview?: boolean
@@ -19,7 +20,9 @@ export default function ShowcasePage(props: IndexPageProps) {
   const { products, settings } = props
   const { push } = useRouter()
 
-  console.log(products)
+  const images = products[1].pictures.map((pic) => pic.asset._ref)
+
+  console.log(images)
 
   return (
     <>

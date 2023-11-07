@@ -21,8 +21,9 @@ export default function ProductPage({
   loading,
   settings,
 }: PostPageProps) {
-  const [firstImage, ...images] = product?.pictures
-  const source = firstImage?.asset?._ref
+  const images = product?.pictures.map((pic) => pic.asset._ref)
+
+  console.log(images)
 
   const slug = product?.slug
 
@@ -34,7 +35,7 @@ export default function ProductPage({
     <>
       <ProductPageHead product={product} settings={settings} />
       <Container>
-        <ProductImage source={source} soldout={product.soldout} />
+        <ProductImage images={images} soldout={product.soldout} />
         <DetailsWrapper>
           <ProductVariant product={product} />
 
