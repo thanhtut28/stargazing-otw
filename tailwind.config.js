@@ -16,6 +16,7 @@ module.exports = {
         dark: '#000000',
         white: '#DFDFDF',
         banner: '#A1A1A1',
+        primary: '#800101',
         secondary: '#959595',
         disabled: '#696969',
         'accent-1': '#FAFAFA',
@@ -44,6 +45,23 @@ module.exports = {
       boxShadow: {
         small: '0 5px 10px rgba(0, 0, 0, 0.12)',
         medium: '0 8px 30px rgba(0, 0, 0, 0.12)',
+      },
+      keyframes: {
+        glitch: {
+          '0%, 100%': {
+            transform: 'translate(0, 0)',
+          },
+          '2%, 64%': {
+            transform: 'translate(2px, -3px)',
+          },
+          '4%, 60%': {
+            transform: 'translate(-5px, 5px)',
+          },
+          // Adjust as needed for your desired glitch effect
+        },
+      },
+      animation: {
+        glitch: 'glitch 2s infinite',
       },
     },
   },

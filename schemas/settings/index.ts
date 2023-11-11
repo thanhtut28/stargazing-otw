@@ -55,6 +55,26 @@ export default defineType({
       ],
       validation: (rule) => rule.max(155).required(),
     }),
+
+    defineField({
+      name: 'brushImage',
+      title: 'Brush Image',
+      type: 'image',
+    }),
+
+    defineField({
+      name: 'heroImages',
+      title: 'Hero Images',
+      type: 'array',
+      of: [
+        {
+          type: 'image',
+          options: { hotspot: true },
+        },
+      ],
+      validation: (rule) => rule.required(),
+    }),
+
     defineField({
       name: 'ogImage',
       title: 'Open Graph Image',

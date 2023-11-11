@@ -91,6 +91,8 @@ export interface Settings {
   ogImage?: {
     title?: string
   }
+  brushImage: any
+  heroImages: any[]
 }
 
 export interface Product {

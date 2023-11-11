@@ -5,11 +5,11 @@ import {
   postAndMoreStoriesQuery,
   postBySlugQuery,
   postSlugsQuery,
-  type Settings,
-  settingsQuery,
   Product,
   productBySlugQuery,
   productSlugsQuery,
+  type Settings,
+  settingsQuery,
   showcaseQuery,
 } from 'lib/sanity.queries'
 import { createClient, type SanityClient } from 'next-sanity'

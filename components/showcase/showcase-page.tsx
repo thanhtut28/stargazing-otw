@@ -3,11 +3,11 @@ import Button from 'components/utils/button'
 import type { Product, Settings } from 'lib/sanity.queries'
 import { useRouter } from 'next/router'
 
+import ImageGallery from '../utils/image-gallery'
 import Container from './showcase-container'
 import ShowcasePageHead from './showcase-page-head'
 import ProductImage from './showcase-product-image'
-import ImageGallery from '../utils/image-gallery'
-import Title from './showcase-title'
+import TitleC from './showcase-title'
 
 export interface IndexPageProps {
   preview?: boolean
@@ -29,7 +29,7 @@ export default function ShowcasePage(props: IndexPageProps) {
       <ShowcasePageHead settings={settings} />
 
       <Container>
-        <Title />
+        <TitleC />
         <div className="grid grid-cols-1 p-2 gap-5 mx-auto lg:max-w-screen-lg md:grid-cols-2">
           {products?.map((product) => (
             <div key={product._id}>
