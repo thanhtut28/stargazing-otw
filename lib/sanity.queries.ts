@@ -93,6 +93,7 @@ export interface Settings {
   }
   brushImage: any
   heroImages: any[]
+  featuredImages: any[]
 }
 
 export interface Product {

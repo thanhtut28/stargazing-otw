@@ -37,7 +37,7 @@ export default function ShowcasePage(props: IndexPageProps) {
                 <ProductImage source={product.pictures?.[0]?.asset?._ref} />
                 <div className="absolute p-3 top-0 bottom-0 left-0 right-0 w-full h-full flex flex-col justify-end">
                   <div className="flex flex-col items-center ">
-                    <h6 className="py-2 uppercase text-secondary text-lg">
+                    <h6 className="py-3 uppercase text-secondary text-lg">
                       {product.itemType}
                     </h6>
                     <h3 className="font-heading text-6xl pb-2">

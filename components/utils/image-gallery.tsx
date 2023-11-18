@@ -126,7 +126,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
           </motion.div>
         ))}
         <Button
-          className="absolute left-5 top-1/2 transform -translate-y-1/2 text-2xl px-2 opacity-40"
+          className="absolute left-5 top-1/2 transform -translate-y-1/2 text-2xl px-2 opacity-30"
           variant="icon"
           onClick={() => handleCarouselChange(-1)}
         >

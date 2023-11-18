@@ -50,7 +50,7 @@ const ProductHeading = ({
           {name}
         </h2>
         <div className="text-secondary flex flex-col ml-2 -mt-1 lg:mr-5">
-          <h6 className="uppercase font-semibold">{itemType}</h6>
+          <h6 className="uppercase text-primary font-semibold">{itemType}</h6>
           <p className="text-xs font-light">
             <ProductDate dateString={releaseDate} />
           </p>

@@ -16,7 +16,7 @@ module.exports = {
         dark: '#000000',
         white: '#DFDFDF',
         banner: '#A1A1A1',
-        primary: '#800101',
+        primary: '#9c0202',
         secondary: '#959595',
         disabled: '#696969',
         'accent-1': '#FAFAFA',

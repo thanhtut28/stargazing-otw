@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 export default function Title() {
   return (
-    <h2 className="text-[16vw] tracking-tighter font-semibold uppercase ">
+    <h2 className="relative text-[16vw] w-fit tracking-tighter font-bold uppercase">
       Showcase
     </h2>
   )
