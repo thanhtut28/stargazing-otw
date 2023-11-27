@@ -45,7 +45,7 @@ export default function ShowcasePage(props: IndexPageProps) {
                     </h3>
 
                     <Button
-                      variant="cta"
+                      variant="action"
                       onClick={() =>
                         push({
                           pathname: `/products/${product.slug}`,
@@ -53,9 +53,7 @@ export default function ShowcasePage(props: IndexPageProps) {
                       }
                     >
                       Explore
-                      <span>
-                        <ArrowLongRightIcon className="text-black w-6 h-6 group-hover:text-white" />
-                      </span>
+                      <ArrowLongRightIcon className="w-6 h-6" />
                     </Button>
                   </div>
                 </div>

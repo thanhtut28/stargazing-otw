@@ -24,6 +24,11 @@ export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
   const { draftMode = false } = ctx
   const client = getClient(draftMode ? { token: readToken } : undefined)
 
+  // demo testing page loading time
+  // await new Promise((resolve) => {
+  //   setTimeout(resolve, 3000)
+  // })
+
   const [settings, products = []] = await Promise.all([
     getSettings(client),
     getAllProducts(client),

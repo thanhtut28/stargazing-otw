@@ -14,6 +14,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
   // const [dragStartX, setDragStartX] = useState(0)
   const containerRef = useRef(null)
   const controls = useAnimation()
+  const isMoreThanOneImage = images.length > 1
 
   useEffect(() => {
     if (containerRef.current) {
@@ -36,12 +37,11 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
               containerRect.left +
               containerRef.current.scrollLeft
 
-            // Animate the scroll using Framer Motion
-            const scrollDuration = 0.3 // Set your desired duration
+            const scrollDuration = 0.3
             containerRef.current.style.scrollBehavior = 'smooth'
             containerRef.current.scrollLeft = scrollX
 
-            // Reset scroll behavior after the animation is complete
+            // Reset scroll behavior after the animation is completed
             setTimeout(() => {
               containerRef.current.style.scrollBehavior = 'auto'
             }, scrollDuration * 1000)
@@ -125,20 +125,24 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
             />
           </motion.div>
         ))}
-        <Button
-          className="absolute left-5 top-1/2 transform -translate-y-1/2 text-2xl px-2 opacity-30"
-          variant="icon"
-          onClick={() => handleCarouselChange(-1)}
-        >
-          <ChevronLeftIcon className="w-6 h-6" />
-        </Button>
-        <Button
-          className="absolute right-5 top-1/2 transform -translate-y-1/2 text-2xl px-2 opacity-40"
-          variant="icon"
-          onClick={() => handleCarouselChange(1)}
-        >
-          <ChevronRightIcon className="w-6 h-6" strokeWidth="100" />
-        </Button>
+        {isMoreThanOneImage && (
+          <>
+            <Button
+              className="absolute left-5 top-1/2 transform -translate-y-1/2 text-2xl px-2"
+              variant="icon"
+              onClick={() => handleCarouselChange(-1)}
+            >
+              <ChevronLeftIcon className="w-5 h-4" />
+            </Button>
+            <Button
+              className="absolute right-5 top-1/2 transform -translate-y-1/2 text-2xl px-2"
+              variant="icon"
+              onClick={() => handleCarouselChange(1)}
+            >
+              <ChevronRightIcon className="w-4 h-4" />
+            </Button>
+          </>
+        )}
       </div>
 
       <div

@@ -1,16 +1,16 @@
 import cn from 'classnames'
-import React from 'react'
+import React, { forwardRef } from 'react'
 
 type ButtonProps = {
-  variant?: 'primary' | 'selected' | 'cta' | 'icon'
+  variant?: 'primary' | 'selected' | 'cta' | 'icon' | 'action'
 } & React.ButtonHTMLAttributes<HTMLButtonElement>
 
-const Button = ({
+const Button = forwardRef(function Button({
   children,
   className,
   variant = 'primary',
   ...props
-}: ButtonProps) => {
+}: ButtonProps) {
   return (
     <button
       {...props}
@@ -21,9 +21,12 @@ const Button = ({
             variant === 'primary',
           'w-16 min-w-fit py-1 px-2 lg:py-2 lg:px-3 bg-white text-black hover:bg-white hover:text-black':
             variant === 'selected',
-          'w-full justify-between h-14 px-5 lg:px-7 bg-white text-black hover:bg-black hover:text-white group':
+          'w-full justify-between h-14 px-5 lg:px-7 bg-white text-black hover:bg-black hover:text-white':
+            variant === 'action',
+          'w-16 min-w-fit justify-between p-2.5 lg:px-5 bg-white text-black hover:bg-black hover:text-white':
             variant === 'cta',
-          'w-10 h-10 p-5 bg-white text-black rounded-full': variant === 'icon',
+          'w-10 h-10 p-5 bg-zinc-800 text-secondary border-none rounded-full':
+            variant === 'icon',
         },
         className,
       )}
@@ -31,6 +34,6 @@ const Button = ({
       {children}
     </button>
   )
-}
+})
 
 export default Button

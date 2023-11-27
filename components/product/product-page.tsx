@@ -4,9 +4,9 @@ import { notFound } from 'next/navigation'
 
 import DetailsWrapper from './product-details-wrapper'
 import ProductImage from './product-image'
+import ProductPageHead from './product-page-head'
 import ProductPrice from './product-price'
 import ProductVariant from './product-variant'
-import ProductPageHead from './product-page-head'
 
 export interface PostPageProps {
   preview?: boolean
