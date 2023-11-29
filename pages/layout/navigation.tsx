@@ -1,10 +1,12 @@
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import cn from 'classnames'
 import { Bars2Icon } from '@heroicons/react/24/outline'
 import { XMarkIcon } from '@heroicons/react/24/outline'
-import { Dispatch, SetStateAction } from 'react'
+import cn from 'classnames'
 import Image from 'next/image'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { Dispatch, SetStateAction } from 'react'
+
+import logoImg from './logo.png'
 
 interface Props {
   openNav: boolean
@@ -48,7 +50,7 @@ const Navigation: React.FC<Props> = ({ openNav, setOpenNav }) => {
         <Link href="/" className="relative aspect-square w-12 md:w-14 lg:w-16">
           <Image
             className="absolute"
-            src="/logo.png"
+            src={logoImg}
             fill
             quality={100}
             priority={true}

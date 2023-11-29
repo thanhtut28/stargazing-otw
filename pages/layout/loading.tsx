@@ -1,6 +1,7 @@
 import { useNProgress } from '@tanem/react-nprogress'
 import cn from 'classnames'
 import Image from 'next/image'
+import logoImg from './logo.png'
 
 interface Props {
   loading: boolean
@@ -20,7 +21,7 @@ const PageLoading: React.FC<Props> = ({ loading }) => {
       <div className="relative aspect-square w-14">
         <Image
           className="absolute"
-          src="/logo.png"
+          src={logoImg}
           fill
           quality={100}
           priority={true}
