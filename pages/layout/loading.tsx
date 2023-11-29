@@ -1,6 +1,6 @@
 import { useNProgress } from '@tanem/react-nprogress'
-import cn from 'classnames'
 import Image from 'next/image'
+
 import logoImg from '../../public/assets/logo.png'
 
 interface Props {

@@ -45,13 +45,13 @@ const Navigation: React.FC<Props> = ({ openNav, setOpenNav }) => {
   return (
     <header
       className={cn(
-        'fixed backdrop-blur-sm bg-opacity-95 flex justify-between items-center bg-black z-20 h-20 top-0 left-0 bottom-0 right-0 w-full border-b border-b-disabled border-opacity-30 p-4 sm:p-6 md:p-8 lg:p-10',
+        'fixed backdrop-blur-sm bg-opacity-95 flex justify-between items-center bg-black z-20 h-16 md:h-20 top-0 left-0 bottom-0 right-0 w-full border-b border-b-disabled border-opacity-30 p-4 sm:p-6 md:p-8 lg:p-10',
       )}
     >
       <nav className="flex justify-between items-center w-full relative">
         <Link href="/" className="relative aspect-square w-12 md:w-14 lg:w-16">
           <Image
-            className="absolute"
+            className="absolute rounded-full"
             src={logoImg}
             fill
             quality={100}
@@ -60,7 +60,7 @@ const Navigation: React.FC<Props> = ({ openNav, setOpenNav }) => {
           />
         </Link>
 
-        <ul className="uppercase hidden md:flex gap-5 text-xs font-bold items-center w-full justify-end">
+        <ul className="uppercase hidden md:flex gap-5 text-sm font-bold items-center w-full justify-end">
           {LINKS.map((link) => (
             <li
               key={link.name}
@@ -81,7 +81,7 @@ const Navigation: React.FC<Props> = ({ openNav, setOpenNav }) => {
 
         <div
           className={cn(
-            'fixed mt-20 top-0 bottom-0 left-0 right-0 z-30 w-full h-screen bg-black transition-all duration-500 translate-x-[-100%] md:hidden overflow-hidden',
+            'fixed mt-16 md:mt-20 top-0 bottom-0 left-0 right-0 z-30 w-full h-screen bg-black transition-all duration-500 translate-x-[-100%] md:hidden overflow-hidden',
             {
               'translate-x-[0%]': openNav,
             },

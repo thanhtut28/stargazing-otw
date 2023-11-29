@@ -19,6 +19,7 @@ const productFields = groq`
   pictures,
   price,
   description,
+  disclaimer,
   soldout,
   "slug": slug.current,
   variants,
@@ -103,6 +104,7 @@ export interface Product {
   itemType: string
   releaseDate: string
   description?: string
+  disclaimer?: string
   pictures: any[]
   price: number
   soldout?: boolean

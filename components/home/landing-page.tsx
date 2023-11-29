@@ -20,7 +20,7 @@ export default function LandingPage({ settings }: IndexPageProps) {
       <IndexPageHead settings={settings} />
       <Container>
         <HeroSection brushImage={brushImage} heroImages={heroImages} />
-        {/* <div className="h-[1px] w-5/6 mx-auto bg-disabled" /> */}
+        <div className="h-[1px] w-full mx-auto bg-disabled opacity-20 my-6 md:my-8 lg:my-10" />
         <FeaturesSection featuredImages={featuredImages} />
       </Container>
     </>

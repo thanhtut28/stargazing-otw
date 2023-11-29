@@ -38,6 +38,7 @@ const Template: React.FC<Props> = ({ children }) => {
     }
 
     const handleRouteChangeEnd = () => {
+      setOpenNav(false)
       setRouteState((prevState) => ({
         ...prevState,
         isRouteChanging: false,
@@ -59,9 +60,12 @@ const Template: React.FC<Props> = ({ children }) => {
     <>
       <Navigation openNav={openNav} setOpenNav={setOpenNav} />
       <main
-        className={cn(`${myFont.className} ${headingFont.variable} pt-20`, {
-          'fixed w-full': openNav || routeState.isRouteChanging,
-        })}
+        className={cn(
+          `${myFont.className} ${headingFont.variable} pt-16 md:pt-20`,
+          {
+            'fixed w-full': openNav || routeState.isRouteChanging,
+          },
+        )}
       >
         {children}
       </main>

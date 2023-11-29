@@ -37,6 +37,12 @@ export default defineType({
     }),
 
     defineField({
+      name: 'disclaimer',
+      title: 'Disclaimer',
+      type: 'text',
+    }),
+
+    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',

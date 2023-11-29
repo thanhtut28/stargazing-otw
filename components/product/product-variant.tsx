@@ -40,9 +40,11 @@ type HeadingProps = Partial<Product>
 const ProductHeading = ({
   name,
   description,
+  disclaimer,
   itemType,
   releaseDate,
 }: HeadingProps) => {
+  console.log(disclaimer)
   return (
     <div className="py-4">
       <div className="pl-5">
@@ -59,9 +61,17 @@ const ProductHeading = ({
 
       {description && (
         <div className="flex lg:justify-end pt-10 pb-5">
-          <p className="text-sm text-secondary max-w-lg lg:w-1/2 lg:min-w-[16rem]">
+          <p className="text-sm text-secondary max-w-lg lg:w-2/3 xl:w-1/2 lg:min-w-[16rem]">
             {description}
           </p>
+        </div>
+      )}
+      {disclaimer && (
+        <div className="flex lg:justify-end py-5">
+          <div className="relative bg-neutral-900 py-4 px-6 rounded-md uppercase text-left text-disabled tracking-wider text-2xs md:text-xs max-w-lg lg:w-2/3 xl:w-1/2 lg:min-w-[16rem]">
+            {disclaimer}
+            <div className="absolute top-0 left-0 bottom-0 w-2 bg-primary rounded-tl-md rounded-bl-md" />
+          </div>
         </div>
       )}
     </div>

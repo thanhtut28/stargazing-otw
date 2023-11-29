@@ -7,6 +7,8 @@ import ProductImage from './product-image'
 import ProductPageHead from './product-page-head'
 import ProductPrice from './product-price'
 import ProductVariant from './product-variant'
+import Link from 'next/link'
+import { ArrowLongLeftIcon } from '@heroicons/react/24/outline'
 
 export interface PostPageProps {
   preview?: boolean

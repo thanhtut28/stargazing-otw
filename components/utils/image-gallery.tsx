@@ -96,7 +96,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
   //   }
 
   return (
-    <div className="relative w-full aspect-[2/3] md:aspect-square lg:aspect-[2/3] h-full flex flex-col">
+    <div className="relative w-full aspect-[2/3] md:aspect-square lg:aspect-[2/3] flex flex-col">
       <div className="image-carousel border-b-[0.5px] border-disabled border-opacity-30 md:border-[0.5px] overflow-hidden flex flex-1 items-center w-full h-full">
         {images.map((image, index) => (
           <motion.div

@@ -25,7 +25,7 @@ const HeroCarousel: React.FC<ImageGalleryProps> = ({ images }) => {
   }, [controls, images.length, selectedImageIndex])
 
   return (
-    <div className="md:aspect-square h-full flex flex-col w-full relative aspect-[3/4] lg:aspect-video max-w-screen-lg mx-auto">
+    <div className="md:aspect-square h-full flex flex-col w-full relative aspect-[3/4] lg:aspect-video max-w-screen-lg lg:px-2 mx-auto">
       <div className="overflow-hidden flex flex-1 items-center w-full h-full">
         {images.map((image, index) => (
           <motion.div
