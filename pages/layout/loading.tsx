@@ -1,7 +1,7 @@
 import { useNProgress } from '@tanem/react-nprogress'
 import cn from 'classnames'
 import Image from 'next/image'
-import logoImg from './logo.png'
+import logoImg from '../../public/logo.png'
 
 interface Props {
   loading: boolean
