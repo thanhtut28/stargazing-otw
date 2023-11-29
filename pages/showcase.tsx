@@ -4,6 +4,8 @@ import { getAllProducts, getClient, getSettings } from 'lib/sanity.client'
 import { Product, Settings } from 'lib/sanity.queries'
 import { GetStaticProps } from 'next'
 import type { SharedPageProps } from 'pages/_app'
+import { NextPageWithLayout } from 'types/global'
+import Template from './layout/template'
 
 interface PageProps extends SharedPageProps {
   products: Product[]
@@ -14,11 +16,15 @@ interface Query {
   [key: string]: string
 }
 
-export default function Page(props: PageProps) {
+const Page: NextPageWithLayout<PageProps> = (props) => {
   const { products, settings } = props
 
   return <ShowcasePage settings={settings} products={products} />
 }
+
+Page.getLayout = (page) => <Template>{page}</Template>
+
+export default Page
 
 export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
   const { draftMode = false } = ctx
@@ -26,7 +32,7 @@ export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
 
   // demo testing page loading time
   // await new Promise((resolve) => {
-  //   setTimeout(resolve, 3000)
+  //   setTimeout(resolve, 1000)
   // })
 
   const [settings, products = []] = await Promise.all([

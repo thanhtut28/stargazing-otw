@@ -4,6 +4,7 @@ import cn from 'classnames'
 import { Bars2Icon } from '@heroicons/react/24/outline'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { Dispatch, SetStateAction } from 'react'
+import Image from 'next/image'
 
 interface Props {
   openNav: boolean
@@ -38,13 +39,23 @@ const Navigation: React.FC<Props> = ({ openNav, setOpenNav }) => {
   }
 
   return (
-    <div
+    <header
       className={cn(
-        'flex justify-between items-center bg-black z-40 h-20 top-0 left-0 bottom-0 right-0 w-full border-b border-b-disabled border-opacity-30 p-4 sm:p-6 md:p-8 lg:p-10',
+        'fixed backdrop-blur-sm bg-opacity-95 flex justify-between items-center bg-black z-20 h-20 top-0 left-0 bottom-0 right-0 w-full border-b border-b-disabled border-opacity-30 p-4 sm:p-6 md:p-8 lg:p-10',
       )}
     >
-      <div className="flex justify-between items-center w-full relative">
-        <div>LOGO</div>
+      <nav className="flex justify-between items-center w-full relative">
+        <Link href="/" className="relative aspect-square w-12 md:w-14 lg:w-16">
+          <Image
+            className="absolute"
+            src="/logo.png"
+            fill
+            quality={100}
+            priority={true}
+            alt="logo"
+          />
+        </Link>
+
         <ul className="uppercase hidden md:flex gap-5 text-xs font-bold items-center w-full justify-end">
           {LINKS.map((link) => (
             <li
@@ -84,8 +95,8 @@ const Navigation: React.FC<Props> = ({ openNav, setOpenNav }) => {
             ))}
           </ul>
         </div>
-      </div>
-    </div>
+      </nav>
+    </header>
   )
 }
 

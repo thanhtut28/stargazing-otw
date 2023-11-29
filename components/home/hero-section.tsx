@@ -20,11 +20,11 @@ export default function HeroSection({ brushImage, heroImages }: HeroProps) {
       amplitudeY: 0.05,
     },
     timing: {
-      duration: 6000,
+      duration: 8000,
     },
     glitchTimeSpan: {
       start: 0.2,
-      end: 0.3,
+      end: 0.28,
     },
   })
 
@@ -34,12 +34,12 @@ export default function HeroSection({ brushImage, heroImages }: HeroProps) {
         <div className="relative">
           <h1
             className="text-[24vw] pt-3 sm:h-auto text-center font-heading"
-            // ref={glitch.ref}
+            ref={glitch.ref}
           >
             Stargazing
           </h1>
 
-          {/* <div className="absolute bottom-3 left-0 right-0 w-5/6 mx-auto">
+          <div className="absolute bottom-3 left-0 right-0 w-5/6 mx-auto">
             <Reveal type="appear">
               <Image
                 className="object-cover w-full"
@@ -49,7 +49,7 @@ export default function HeroSection({ brushImage, heroImages }: HeroProps) {
                 src={urlForImage(brushSource).url()}
               />
             </Reveal>
-          </div> */}
+          </div>
         </div>
         <Reveal>
           <p className="text-center text-secondary p-10 py-16 lg:p-5 sm:text-lg md:p-14 md:text-xl lg:text-3xl leading-snug lg:w-1/2 mx-auto">
