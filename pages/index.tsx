@@ -5,7 +5,8 @@ import { readToken } from 'lib/sanity.api'
 import { getAllPosts, getClient, getSettings } from 'lib/sanity.client'
 import { Post, Settings } from 'lib/sanity.queries'
 import { GetStaticProps } from 'next'
-import type { SharedPageProps } from 'pages/_app'
+import type { NextPageWithLayout, SharedPageProps } from 'pages/_app'
+import Template from './layout/template'
 
 interface PageProps extends SharedPageProps {
   settings: Settings
@@ -15,8 +16,8 @@ interface Query {
   [key: string]: string
 }
 
-export default function Page(props: PageProps) {
-  const { settings, draftMode } = props
+const Home: NextPageWithLayout<PageProps> = (props) => {
+  const { draftMode, settings } = props
 
   // if (draftMode) {
   //   return <PreviewIndexPage posts={posts} settings={settings} />
@@ -24,6 +25,10 @@ export default function Page(props: PageProps) {
 
   return <LandingPage settings={settings} />
 }
+
+Home.getLayout = (page) => <Template>{page}</Template>
+
+export default Home
 
 export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
   const { draftMode = false } = ctx
