@@ -40,6 +40,8 @@ const Navigation: React.FC<Props> = ({ openNav, setOpenNav }) => {
     setOpenNav((prev) => !prev)
   }
 
+  console.log('path', asPath)
+
   return (
     <header
       className={cn(

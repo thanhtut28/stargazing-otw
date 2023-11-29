@@ -27,8 +27,6 @@ const Template: React.FC<Props> = ({ children }) => {
     loadingKey: 0,
   })
 
-  console.log(routeState.isRouteChanging)
-
   useEffect(() => {
     const handleRouteChangeStart = () => {
       setOpenNav(false)
