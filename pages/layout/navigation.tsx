@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Dispatch, SetStateAction } from 'react'
 
-import logoImg from '../../public/logo.png'
+import logoImg from './logo.png'
 
 interface Props {
   openNav: boolean
