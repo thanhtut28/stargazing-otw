@@ -64,9 +64,10 @@ const Navigation: React.FC<Props> = ({ openNav, setOpenNav }) => {
           {LINKS.map((link) => (
             <li
               key={link.name}
-              className={cn('text-secondary', {
-                'text-white': asPath === link.path,
-              })}
+              className={cn(
+                { 'text-white': asPath === link.path },
+                { 'text-secondary': asPath !== link.path },
+              )}
             >
               <Link href={link.path}>{link.name}</Link>
             </li>

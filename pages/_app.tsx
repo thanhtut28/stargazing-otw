@@ -1,6 +1,6 @@
 import 'tailwindcss/tailwind.css'
 
-import { lazy } from 'react'
+import { StrictMode, lazy } from 'react'
 import { AppPropsWithLayout } from 'types/global'
 
 export interface SharedPageProps {
@@ -22,7 +22,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
           <Component {...pageProps} />
         </PreviewProvider>
       ) : (
-        <>
+        <StrictMode>
           {/* <nav>
             <style jsx>{`
               a {
@@ -33,7 +33,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
             <Link href="/showcase">Showcase</Link>{' '}
           </nav> */}
           {getLayout(<Component {...pageProps} />)}
-        </>
+        </StrictMode>
       )}
     </>
   )
