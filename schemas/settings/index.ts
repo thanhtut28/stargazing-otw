@@ -89,6 +89,13 @@ export default defineType({
     }),
 
     defineField({
+      name: 'heroVideo',
+      title: 'Hero Video',
+      description: 'Teaser video',
+      type: 'file',
+    }),
+
+    defineField({
       name: 'ogImage',
       title: 'Open Graph Image',
       description:

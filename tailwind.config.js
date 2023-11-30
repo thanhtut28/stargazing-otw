@@ -48,21 +48,17 @@ module.exports = {
         medium: '0 8px 30px rgba(0, 0, 0, 0.12)',
       },
       keyframes: {
-        glitch: {
-          '0%, 100%': {
-            transform: 'translate(0, 0)',
+        marquee: {
+          '0%': {
+            transform: 'translateX(0%)',
           },
-          '2%, 64%': {
-            transform: 'translate(2px, -3px)',
+          '100%': {
+            transform: 'translateX(-100%)',
           },
-          '4%, 60%': {
-            transform: 'translate(-5px, 5px)',
-          },
-          // Adjust as needed for your desired glitch effect
         },
       },
       animation: {
-        glitch: 'glitch 2s infinite',
+        marquee: 'marquee 20s linear infinite',
       },
     },
   },

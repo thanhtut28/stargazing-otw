@@ -1,11 +1,11 @@
 import cn from 'classnames'
-import React, { forwardRef } from 'react'
+import React from 'react'
 
 type ButtonProps = {
   variant?: 'primary' | 'selected' | 'cta' | 'icon' | 'action'
 } & React.ButtonHTMLAttributes<HTMLButtonElement>
 
-const Button = forwardRef(function Button({
+const Button = function Button({
   children,
   className,
   variant = 'primary',
@@ -34,6 +34,6 @@ const Button = forwardRef(function Button({
       {children}
     </button>
   )
-})
+}
 
 export default Button

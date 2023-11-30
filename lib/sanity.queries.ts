@@ -25,7 +25,19 @@ const productFields = groq`
   variants,
 `
 
-export const settingsQuery = groq`*[_type == "settings"][0]`
+const settingsFields = groq`
+  title,
+  description,
+  ogImage,  
+  brushImage,
+  heroImages,
+  featuredImages,
+  "heroVideo": heroVideo.asset->url,
+`
+
+export const settingsQuery = groq`*[_type == "settings"][0]{
+  ${settingsFields}
+}`
 
 export const indexQuery = groq`
 *[_type == "post"] | order(date desc, _updatedAt desc) {
@@ -92,6 +104,7 @@ export interface Settings {
   ogImage?: {
     title?: string
   }
+  heroVideo: any
   brushImage: any
   heroImages: any[]
   featuredImages: any[]

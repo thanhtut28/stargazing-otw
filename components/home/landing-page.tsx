@@ -5,6 +5,8 @@ import FeaturesSection from './features-section'
 import HeroSection from './hero-section'
 import Container from './landing-container'
 import IndexPageHead from './landing-page-head'
+import Partners from './partners'
+import Divider from 'components/utils/divider'
 
 export interface IndexPageProps {
   preview?: boolean
@@ -13,15 +15,19 @@ export interface IndexPageProps {
 }
 
 export default function LandingPage({ settings }: IndexPageProps) {
-  const { brushImage, heroImages, featuredImages } = settings
+  const { brushImage, heroImages, featuredImages, heroVideo } = settings
+
+  console.log(settings)
 
   return (
     <>
       <IndexPageHead settings={settings} />
       <Container>
-        <HeroSection brushImage={brushImage} heroImages={heroImages} />
-        <div className="h-[1px] w-full mx-auto bg-disabled opacity-20 my-6 md:my-8 lg:my-10" />
+        <HeroSection brushImage={brushImage} heroVideo={heroVideo} />
+        <Divider />
         <FeaturesSection featuredImages={featuredImages} />
+        <Divider />
+        <Partners />
       </Container>
     </>
   )

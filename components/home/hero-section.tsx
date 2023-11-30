@@ -6,12 +6,12 @@ import { useGlitch, GlitchHandle } from 'react-powerglitch'
 
 interface HeroProps {
   brushImage: any
-  heroImages: any[]
+  heroVideo: any
 }
 
-export default function HeroSection({ brushImage, heroImages }: HeroProps) {
+export default function HeroSection({ brushImage, heroVideo }: HeroProps) {
   const brushSource = brushImage?.asset?._ref
-  const images = heroImages?.map((img) => img.asset._ref)
+  // const images = heroImages?.map((img) => img.asset._ref)
   const glitch: GlitchHandle = useGlitch({
     playMode: 'always',
     hideOverflow: true,
@@ -60,7 +60,8 @@ export default function HeroSection({ brushImage, heroImages }: HeroProps) {
       </div>
       <div className="pb-10 lg:pt-10">
         <Reveal type="opacity">
-          <HeroCarousel images={images} />
+          {/* <HeroCarousel images={images} /> */}
+          <HeroCarousel video={heroVideo} />
         </Reveal>
       </div>
     </>
