@@ -59,10 +59,8 @@ export default function HeroSection({ brushImage, heroVideo }: HeroProps) {
         </Reveal>
       </div>
       <div className="pb-10 lg:pt-10">
-        <Reveal type="opacity">
-          {/* <HeroCarousel images={images} /> */}
-          <HeroCarousel video={heroVideo} />
-        </Reveal>
+        {/* <HeroCarousel images={images} /> */}
+        <HeroCarousel video={heroVideo} />
       </div>
     </>
   )

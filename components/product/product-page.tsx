@@ -25,8 +25,6 @@ export default function ProductPage({
 }: PostPageProps) {
   const images = product?.pictures.map((pic) => pic.asset._ref)
 
-  console.log(images)
-
   const slug = product?.slug
 
   if (!slug && !preview) {

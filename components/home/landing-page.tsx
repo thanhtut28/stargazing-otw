@@ -15,7 +15,7 @@ export interface IndexPageProps {
 }
 
 export default function LandingPage({ settings }: IndexPageProps) {
-  const { brushImage, heroImages, featuredImages, heroVideo } = settings
+  const { brushImage, featuredImages, heroVideo } = settings
 
   console.log(settings)
 

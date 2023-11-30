@@ -72,14 +72,14 @@ const HeroCarousel: React.FC<HeroVideoProps> = ({ video }) => {
         )}
       ></div>
 
-      <div className="absolute top-0 left-0 right-0 bottom-0 flex gap-1 md:gap-2 lg:gap-4 flex-col justify-end items-center p-5">
+      {/* <div className="absolute top-0 left-0 right-0 bottom-0 flex gap-1 md:gap-2 lg:gap-4 flex-col justify-end items-center p-5">
         <h6 className="font-heading  text-primary text-2xl lg:text-5xl">
           They stargazed about rich life
         </h6>
         <p className="uppercase text-xs opacity-80 font-semibold lg:text-lg">
           EST. 2023
         </p>
-      </div>
+      </div> */}
     </div>
   )
 }

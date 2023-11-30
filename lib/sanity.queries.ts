@@ -106,7 +106,6 @@ export interface Settings {
   }
   heroVideo: any
   brushImage: any
-  heroImages: any[]
   featuredImages: any[]
 }
 

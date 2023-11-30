@@ -22,8 +22,6 @@ export default function ShowcasePage(props: IndexPageProps) {
 
   const images = products[1].pictures.map((pic) => pic.asset._ref)
 
-  console.log(images)
-
   return (
     <>
       <ShowcasePageHead settings={settings} />

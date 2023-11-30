@@ -11,6 +11,7 @@ import logoImg from '../../public/assets/logo.png'
 
 interface Props {
   openNav: boolean
+  shouldShowNav: boolean
   setOpenNav: Dispatch<SetStateAction<boolean>>
 }
 
@@ -34,41 +35,21 @@ const LINKS: TLink[] = [
   },
 ]
 
-const Navigation: React.FC<Props> = ({ openNav, setOpenNav }) => {
+const Navigation: React.FC<Props> = ({
+  openNav,
+  shouldShowNav,
+  setOpenNav,
+}) => {
   const { asPath } = useRouter()
-  const [lastYPos, setLastYPos] = useState(0)
-  const [shouldShowActions, setShouldShowActions] = useState(true)
-
-  useEffect(() => {
-    function handleScroll() {
-      const yPos = window.scrollY
-      const isScrollingUp = yPos < lastYPos
-
-      if (window.scrollY < 200) return
-
-      if (!openNav) {
-        setShouldShowActions(isScrollingUp)
-        setLastYPos(yPos)
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll, false)
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll, false)
-    }
-  }, [lastYPos, openNav])
 
   const handleToggleNav = () => {
     setOpenNav((prev) => !prev)
   }
 
-  console.log('path', asPath)
-
   return (
     <motion.header
       initial={false}
-      animate={{ y: shouldShowActions ? 0 : -100 }}
+      animate={{ y: shouldShowNav ? 0 : -100 }}
       transition={{ y: { duration: 0.4 } }}
       className={cn(
         'fixed backdrop-blur-sm bg-opacity-95 flex justify-between items-center bg-black z-20 h-16 md:h-20 top-0 left-0 bottom-0 right-0 w-full border-b border-b-disabled border-opacity-30 p-4 sm:p-6 md:p-8 lg:p-10',

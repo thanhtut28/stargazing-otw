@@ -1,6 +1,6 @@
 import 'tailwindcss/tailwind.css'
 
-import { StrictMode, lazy } from 'react'
+import { lazy, StrictMode } from 'react'
 import { AppPropsWithLayout } from 'types/global'
 
 export interface SharedPageProps {
@@ -14,6 +14,11 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
   const { draftMode, token } = pageProps
 
   const getLayout = Component.getLayout ?? ((page) => page)
+
+  // remove all console.logs while it is on production
+  if (process.env.NODE_ENV === 'production') {
+    console.log = function () {}
+  }
 
   return (
     <>

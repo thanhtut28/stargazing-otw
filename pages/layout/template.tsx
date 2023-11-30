@@ -1,9 +1,10 @@
-import localFont from 'next/font/local'
-import Navigation from './navigation'
 import cn from 'classnames'
-import { useEffect, useState } from 'react'
+import localFont from 'next/font/local'
 import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
+
 import PageLoading from './loading'
+import Navigation from './navigation'
 
 interface Props {
   children: React.ReactNode
@@ -19,17 +20,48 @@ const myFont = localFont({
 })
 
 const Template: React.FC<Props> = ({ children }) => {
-  const [openNav, setOpenNav] = useState<boolean>(false)
   const router = useRouter()
-
+  const [openNav, setOpenNav] = useState<boolean>(false)
+  const [lastYPos, setLastYPos] = useState(0)
+  const [shouldShowNav, setShouldShowNav] = useState(true)
+  const [fontsLoaded, setFontsLoaded] = useState(false)
   const [routeState, setRouteState] = useState({
     isRouteChanging: false,
     loadingKey: 0,
   })
 
   useEffect(() => {
+    console.log(document.fonts)
+
+    document.fonts.ready.then(() => {
+      setFontsLoaded(true)
+    })
+  }, [])
+
+  useEffect(() => {
+    function handleScroll() {
+      const yPos = window.scrollY
+      const isScrollingUp = yPos < lastYPos
+
+      if (window.scrollY < 200) return
+
+      if (!openNav) {
+        setShouldShowNav(isScrollingUp)
+        setLastYPos(yPos)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, false)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll, false)
+    }
+  }, [lastYPos, openNav])
+
+  useEffect(() => {
     const handleRouteChangeStart = () => {
       setOpenNav(false)
+      setShouldShowNav(true)
       setRouteState((prevState) => ({
         ...prevState,
         isRouteChanging: true,
@@ -39,6 +71,7 @@ const Template: React.FC<Props> = ({ children }) => {
 
     const handleRouteChangeEnd = () => {
       setOpenNav(false)
+      setShouldShowNav(true)
       setRouteState((prevState) => ({
         ...prevState,
         isRouteChanging: false,
@@ -58,18 +91,28 @@ const Template: React.FC<Props> = ({ children }) => {
 
   return (
     <>
-      <Navigation openNav={openNav} setOpenNav={setOpenNav} />
-      <main
-        className={cn(
-          `${myFont.className} ${headingFont.variable} pt-16 md:pt-20`,
-          {
-            'fixed w-full': openNav || routeState.isRouteChanging,
-          },
-        )}
-      >
-        {children}
-      </main>
-      <PageLoading loading={routeState.isRouteChanging}></PageLoading>
+      {fontsLoaded && (
+        <>
+          <Navigation
+            openNav={openNav}
+            setOpenNav={setOpenNav}
+            shouldShowNav={shouldShowNav}
+          />
+          <main
+            className={cn(
+              `${myFont.className} ${headingFont.variable} pt-16 md:pt-20`,
+              {
+                'fixed w-full': openNav || routeState.isRouteChanging,
+              },
+            )}
+          >
+            {children}
+          </main>
+        </>
+      )}
+      <PageLoading
+        loading={routeState.isRouteChanging || !fontsLoaded}
+      ></PageLoading>
     </>
   )
 }

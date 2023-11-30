@@ -19,7 +19,7 @@ export default function FeaturesSection({ featuredImages }: Props) {
   return (
     <div className="p-10 lg:px-2 max-w-screen-lg mx-auto">
       <Reveal>
-        <p className="w-[90%] py-2 md:w-3/4 lg:w-2/3 xl:w-1/2 text-secondary leading-4 text-sm lg:text-xl">
+        <p className="w-[90%] py-4 md:w-3/4 lg:w-2/3 xl:w-1/2 text-secondary leading-4 text-sm lg:text-xl">
           <span className="font-heading leading-3 text-white text-2xl lg:text-4xl pr-2">
             Stargazing
           </span>

@@ -121,6 +121,8 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
               className="w-full object-cover"
               alt={`Featured Photo for ${image}`}
               src={urlForImage(image).url()}
+              priority={true}
+              sizes="100vw"
               fill
             />
           </motion.div>
@@ -163,6 +165,8 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
               className="w-full object-cover"
               alt={`Featured Photo for ${image}`}
               src={urlForImage(image).url()}
+              priority={true}
+              sizes="100vw"
               fill
             />
           </motion.div>
