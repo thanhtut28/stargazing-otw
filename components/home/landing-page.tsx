@@ -15,7 +15,7 @@ export interface IndexPageProps {
 }
 
 export default function LandingPage({ settings }: IndexPageProps) {
-  const { brushImage, featuredImages, heroVideo } = settings
+  const { featuredImages, heroVideo } = settings
 
   console.log(settings)
 
@@ -23,7 +23,7 @@ export default function LandingPage({ settings }: IndexPageProps) {
     <>
       <IndexPageHead settings={settings} />
       <Container>
-        <HeroSection brushImage={brushImage} heroVideo={heroVideo} />
+        <HeroSection heroVideo={heroVideo} />
         <Divider />
         <FeaturesSection featuredImages={featuredImages} />
         <Divider />

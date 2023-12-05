@@ -4,6 +4,7 @@ import Reveal from 'components/utils/reveal'
 import { urlForImage } from 'lib/sanity.image'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 
 interface Props {
   featuredImages: any[]

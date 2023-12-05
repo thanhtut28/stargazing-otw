@@ -57,12 +57,6 @@ export default defineType({
     }),
 
     defineField({
-      name: 'brushImage',
-      title: 'Brush Image',
-      type: 'image',
-    }),
-
-    defineField({
       name: 'featuredImages',
       title: 'Featured Images',
       type: 'array',

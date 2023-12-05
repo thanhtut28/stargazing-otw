@@ -31,8 +31,6 @@ const Template: React.FC<Props> = ({ children }) => {
   })
 
   useEffect(() => {
-    console.log(document.fonts)
-
     document.fonts.ready.then(() => {
       setFontsLoaded(true)
     })

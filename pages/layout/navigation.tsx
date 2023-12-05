@@ -5,9 +5,9 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { Dispatch, SetStateAction, useEffect, useState } from 'react'
+import { Dispatch, SetStateAction } from 'react'
 
-import logoImg from '../../public/assets/logo.png'
+import logoImg from '../../public/assets/logo-gif.gif'
 
 interface Props {
   openNav: boolean
@@ -56,7 +56,7 @@ const Navigation: React.FC<Props> = ({
       )}
     >
       <nav className="flex justify-between items-center w-full relative">
-        <Link href="/" className="relative aspect-square w-12 md:w-14 lg:w-16">
+        <Link href="/" className="relative aspect-square w-14 md:w-16 lg:w-18">
           <Image
             className="absolute rounded-full"
             src={logoImg}

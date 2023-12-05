@@ -1,17 +1,13 @@
 import Reveal from 'components/utils/reveal'
-import { urlForImage } from 'lib/sanity.image'
-import Image from 'next/image'
+import { GlitchHandle, useGlitch } from 'react-powerglitch'
+
 import HeroCarousel from './hero-carousel'
-import { useGlitch, GlitchHandle } from 'react-powerglitch'
 
 interface HeroProps {
-  brushImage: any
   heroVideo: any
 }
 
-export default function HeroSection({ brushImage, heroVideo }: HeroProps) {
-  const brushSource = brushImage?.asset?._ref
-  // const images = heroImages?.map((img) => img.asset._ref)
+export default function HeroSection({ heroVideo }: HeroProps) {
   const glitch: GlitchHandle = useGlitch({
     playMode: 'always',
     hideOverflow: true,
@@ -31,26 +27,13 @@ export default function HeroSection({ brushImage, heroVideo }: HeroProps) {
   return (
     <>
       <div className="flex flex-col justify-between mt-10 lg:mt-0">
-        <div className="relative">
-          <h1
-            className="text-[24vw] pt-3 sm:h-auto text-center font-heading"
-            ref={glitch.ref}
-          >
-            Stargazing
-          </h1>
+        <h1
+          className="text-[24vw] pt-3 sm:h-auto text-center font-heading"
+          ref={glitch.ref}
+        >
+          Stargazing
+        </h1>
 
-          <div className="absolute bottom-3 left-0 right-0 w-5/6 mx-auto">
-            <Reveal type="appear">
-              <Image
-                className="object-cover w-full"
-                width={2318}
-                height={124}
-                alt={`Featured Photo for ${brushSource}`}
-                src={urlForImage(brushSource).url()}
-              />
-            </Reveal>
-          </div>
-        </div>
         <Reveal>
           <p className="text-center text-secondary p-10 py-16 lg:p-5 sm:text-lg md:p-14 md:text-xl lg:text-3xl leading-snug lg:w-1/2 mx-auto">
             Discover a curated selection of streetwear essentials from our local
@@ -59,7 +42,6 @@ export default function HeroSection({ brushImage, heroVideo }: HeroProps) {
         </Reveal>
       </div>
       <div className="pb-10 lg:pt-10">
-        {/* <HeroCarousel images={images} /> */}
         <HeroCarousel video={heroVideo} />
       </div>
     </>
