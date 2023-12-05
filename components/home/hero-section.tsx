@@ -29,6 +29,7 @@ export default function HeroSection({ heroVideo }: HeroProps) {
       <div className="flex flex-col justify-between mt-10 lg:mt-0">
         <h1
           className="text-[24vw] pt-3 sm:h-auto text-center font-heading"
+          // need to remove or change later
           ref={glitch.ref}
         >
           Stargazing
