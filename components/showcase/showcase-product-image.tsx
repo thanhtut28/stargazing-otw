@@ -17,7 +17,6 @@ export default function ProductImage({ source }: Props) {
         alt={`Featured Photo for ${source}`}
         src={urlForImage(source).url()}
         priority
-        placeholder="blur"
         quality={100}
         fill
       />
