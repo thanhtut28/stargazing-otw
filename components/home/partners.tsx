@@ -20,7 +20,6 @@ const Partners: React.FC<Props> = ({ images }) => {
               alt={`Featured Photo for ${img}`}
               src={urlForImage(img).url()}
               priority
-              placeholder="blur"
               fill
             />
           </div>

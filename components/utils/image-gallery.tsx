@@ -123,7 +123,6 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
               src={urlForImage(image).url()}
               priority
               quality={100}
-              placeholder="blur"
               fill
             />
           </motion.div>
@@ -167,7 +166,6 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
               alt={`Featured Photo for ${image}`}
               src={urlForImage(image).url()}
               priority
-              placeholder="blur"
               quality={50}
               fill
             />

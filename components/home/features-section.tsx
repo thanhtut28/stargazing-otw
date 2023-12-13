@@ -50,7 +50,6 @@ export default function FeaturesSection({ featuredImages }: Props) {
             className="w-full object-cover grayscale"
             alt={`Featured Photo for ${firstImage}`}
             src={urlForImage(firstImage).url()}
-            placeholder="blur"
             fill
           />
         </div>
@@ -60,7 +59,6 @@ export default function FeaturesSection({ featuredImages }: Props) {
               className="w-full object-cover grayscale"
               alt={`Featured Photo for ${firstImage}`}
               src={urlForImage(secondImage).url()}
-              placeholder="blur"
               fill
             />
           </div>
