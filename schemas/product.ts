@@ -62,6 +62,14 @@ export default defineType({
     }),
 
     defineField({
+      name: 'featuredImage',
+      title: 'Featured Image',
+      description: 'Photos that will appear in Showcase Page',
+      type: 'image',
+      validation: (rule) => rule.required(),
+    }),
+
+    defineField({
       name: 'pictures',
       title: 'Pictures',
       type: 'array',
@@ -141,7 +149,7 @@ export default defineType({
     select: {
       title: 'name',
       variants: 'variants',
-      media: 'pictures.0.asset',
+      media: 'featuredImage.asset',
     },
     prepare({ title, variants, media }) {
       const colors = variants?.map((v) => v.color)

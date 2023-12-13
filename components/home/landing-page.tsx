@@ -15,9 +15,7 @@ export interface IndexPageProps {
 }
 
 export default function LandingPage({ settings }: IndexPageProps) {
-  const { featuredImages, heroVideo } = settings
-
-  console.log(settings)
+  const { featuredImages, heroVideo, partnersImages } = settings
 
   return (
     <>
@@ -27,7 +25,7 @@ export default function LandingPage({ settings }: IndexPageProps) {
         <Divider />
         <FeaturesSection featuredImages={featuredImages} />
         <Divider />
-        <Partners />
+        <Partners images={partnersImages} />
       </Container>
     </>
   )

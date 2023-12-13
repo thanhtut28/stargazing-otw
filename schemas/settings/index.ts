@@ -77,6 +77,19 @@ export default defineType({
     }),
 
     defineField({
+      name: 'partnersImages',
+      title: 'Partners Images',
+      type: 'array',
+      of: [
+        {
+          type: 'image',
+          options: { hotspot: true },
+        },
+      ],
+      validation: (rule) => rule.required(),
+    }),
+
+    defineField({
       name: 'ogImage',
       title: 'Open Graph Image',
       description:

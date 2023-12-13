@@ -16,6 +16,7 @@ const productFields = groq`
   name,
   itemType,
   releaseDate,
+  featuredImage,
   pictures,
   price,
   description,
@@ -32,6 +33,7 @@ const settingsFields = groq`
   brushImage,
   heroImages,
   featuredImages,
+  partnersImages,
   "heroVideo": heroVideo.asset->url,
 `
 
@@ -106,6 +108,7 @@ export interface Settings {
   }
   heroVideo: any
   featuredImages: any[]
+  partnersImages: any[]
 }
 
 export interface Product {
@@ -116,6 +119,7 @@ export interface Product {
   releaseDate: string
   description?: string
   disclaimer?: string
+  featuredImage: any
   pictures: any[]
   price: number
   soldout?: boolean

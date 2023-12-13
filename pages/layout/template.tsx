@@ -5,6 +5,8 @@ import { useEffect, useState } from 'react'
 
 import PageLoading from './loading'
 import Navigation from './navigation'
+import Footer from './footer'
+import Head from '..'
 
 interface Props {
   children: React.ReactNode
@@ -96,16 +98,20 @@ const Template: React.FC<Props> = ({ children }) => {
             setOpenNav={setOpenNav}
             shouldShowNav={shouldShowNav}
           />
-          <main
-            className={cn(
-              `${myFont.className} ${headingFont.variable} pt-16 md:pt-20`,
-              {
-                'fixed w-full': openNav || routeState.isRouteChanging,
-              },
-            )}
+          <div
+            className={cn({
+              'fixed w-full': openNav || routeState.isRouteChanging,
+            })}
           >
-            {children}
-          </main>
+            <main
+              className={cn(
+                `${myFont.className} ${headingFont.variable} pt-16 md:pt-20`,
+              )}
+            >
+              {children}
+            </main>
+            <Footer className={`${myFont.className} ${headingFont.variable}`} />
+          </div>
         </>
       )}
       <PageLoading

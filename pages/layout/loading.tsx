@@ -14,7 +14,7 @@ const PageLoading: React.FC<Props> = ({ loading }) => {
 
   return (
     <div
-      className={`z-50 bg-black fixed gap-5 flex-col justify-center items-center bg-slate-black top-0 left-0 right-0 bottom-0 w-full h-full ${
+      className={`z-50 bg-black fixed gap-5 flex-col justify-center items-center top-0 left-0 right-0 bottom-0 w-full h-full ${
         isFinished ? 'hidden' : 'flex'
       }`}
     >
