@@ -6,13 +6,19 @@ interface Props {
 }
 
 export default function ProductImage({ source }: Props) {
-  console.log(source)
+  const data = fetch('/api/blur')
+
+  console.log(data)
+
   return (
     <div className="relative w-full h-full">
       <Image
         className="w-full object-cover"
         alt={`Featured Photo for ${source}`}
         src={urlForImage(source).url()}
+        priority
+        placeholder="blur"
+        quality={100}
         fill
       />
       <div className="bg-gradient-to-t from-dark absolute top-0 bottom-0 left-0 right-0" />

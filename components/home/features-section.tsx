@@ -4,7 +4,6 @@ import Reveal from 'components/utils/reveal'
 import { urlForImage } from 'lib/sanity.image'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import { useEffect } from 'react'
 
 interface Props {
   featuredImages: any[]
@@ -51,6 +50,7 @@ export default function FeaturesSection({ featuredImages }: Props) {
             className="w-full object-cover grayscale"
             alt={`Featured Photo for ${firstImage}`}
             src={urlForImage(firstImage).url()}
+            placeholder="blur"
             fill
           />
         </div>
@@ -60,6 +60,7 @@ export default function FeaturesSection({ featuredImages }: Props) {
               className="w-full object-cover grayscale"
               alt={`Featured Photo for ${firstImage}`}
               src={urlForImage(secondImage).url()}
+              placeholder="blur"
               fill
             />
           </div>

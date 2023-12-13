@@ -19,8 +19,8 @@ const Partners: React.FC<Props> = ({ images }) => {
               className="w-full object-cover"
               alt={`Featured Photo for ${img}`}
               src={urlForImage(img).url()}
-              priority={true}
-              quality={100}
+              priority
+              placeholder="blur"
               fill
             />
           </div>

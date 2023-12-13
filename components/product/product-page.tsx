@@ -33,10 +33,6 @@ export default function ProductPage({
     notFound()
   }
 
-  if (router.isFallback) {
-    return <h1>Loading</h1>
-  }
-
   return (
     <>
       <ProductPageHead product={product} settings={settings} />
