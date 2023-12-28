@@ -1,20 +1,23 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid'
+import cn from 'classnames'
 import Button from 'components/utils/button'
-import { motion, PanInfo, useAnimation } from 'framer-motion'
+import { motion, useAnimation } from 'framer-motion'
 import { urlForImage } from 'lib/sanity.image'
 import Image from 'next/image'
-import React, { forwardRef, useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 interface ImageGalleryProps {
   images: string[]
+  sizeChart: string
 }
 
-const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
+const ImageGallery: React.FC<ImageGalleryProps> = ({ images, sizeChart }) => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0)
+  const imagesArr = [...images, ...(sizeChart ? [sizeChart] : [])]
   // const [dragStartX, setDragStartX] = useState(0)
   const containerRef = useRef(null)
   const controls = useAnimation()
-  const isMoreThanOneImage = images.length > 1
+  const isMoreThanOneImage = imagesArr.length > 1
 
   useEffect(() => {
     if (containerRef.current) {
@@ -53,9 +56,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
 
   const handleCarouselChange = async (direction: number) => {
     const newIndex =
-      (selectedImageIndex + direction + images.length) % images.length
-
-    console.log(`-${100 * newIndex}%`, selectedImageIndex)
+      (selectedImageIndex + direction + imagesArr.length) % imagesArr.length
 
     await controls.start({
       x: `-${100 * newIndex}%`,
@@ -65,10 +66,6 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
   }
 
   const handleSelectThumb = (destination: number) => {
-    const direction = destination - selectedImageIndex
-
-    console.log(direction)
-
     controls.start({
       x: `${-destination * 100}%`,
     })
@@ -98,7 +95,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
   return (
     <div className="relative w-full aspect-[2/3] md:aspect-square lg:aspect-[2/3] flex flex-col">
       <div className="image-carousel border-b-[0.5px] border-disabled border-opacity-30 md:border-[0.5px] overflow-hidden flex flex-1 items-center w-full h-full">
-        {images.map((image, index) => (
+        {imagesArr.map((image, index) => (
           <motion.div
             className="min-w-full h-full relative"
             key={index}
@@ -118,7 +115,10 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
             // }}
           >
             <Image
-              className="w-full object-cover"
+              className={cn(`w-full`, {
+                'object-cover': image !== sizeChart,
+                'object-contain': image === sizeChart,
+              })}
               alt={`Featured Photo for ${image}`}
               src={urlForImage(image).url()}
               priority
@@ -151,7 +151,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
         className="flex items-center overflow-x-hidden mt-2"
         ref={containerRef}
       >
-        {images.map((image, index) => (
+        {imagesArr.map((image, index) => (
           <motion.div
             key={index}
             className={`relative min-w-[calc(28%-0.45rem)] md:min-w-[calc(17%-0.45rem)] lg:min-w-[calc(22%-0.45rem)] mx-1 aspect-video cursor-pointer border-2 ${

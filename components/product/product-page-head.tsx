@@ -17,7 +17,6 @@ export default function ProductPageHead({
   return (
     <Head>
       <title>{product.name ? `${product.name} | ${title}` : title}</title>
-      <BlogMeta />
       {product.pictures?.[0]?.asset?._ref && (
         <meta
           property="og:image"

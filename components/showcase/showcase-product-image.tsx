@@ -6,10 +6,6 @@ interface Props {
 }
 
 export default function ProductImage({ source }: Props) {
-  const data = fetch('/api/blur')
-
-  console.log(data)
-
   return (
     <div className="relative w-full h-full">
       <Image

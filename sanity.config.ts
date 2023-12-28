@@ -21,8 +21,7 @@ import postType from 'schemas/post'
 import productType from 'schemas/product'
 import settingsType from 'schemas/settings'
 
-const title =
-  process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE || 'Next.js Blog with Sanity.io'
+const title = process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE || 'Stargazing'
 
 export default defineConfig({
   basePath: '/studio',
@@ -31,7 +30,7 @@ export default defineConfig({
   title,
   schema: {
     // If you want more content types, you can add them to this array
-    types: [authorType, postType, productType, settingsType],
+    types: [productType, settingsType],
   },
   plugins: [
     deskTool({

@@ -83,6 +83,13 @@ export default defineType({
     }),
 
     defineField({
+      name: 'sizeChart',
+      title: 'Size Chart',
+      type: 'image',
+      options: { hotspot: true },
+    }),
+
+    defineField({
       name: 'soldout',
       title: 'Sold Out',
       type: 'boolean',

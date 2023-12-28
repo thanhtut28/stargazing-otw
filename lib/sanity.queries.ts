@@ -18,6 +18,7 @@ const productFields = groq`
   releaseDate,
   featuredImage,
   pictures,
+  sizeChart,
   price,
   description,
   disclaimer,
@@ -121,6 +122,7 @@ export interface Product {
   disclaimer?: string
   featuredImage: any
   pictures: any[]
+  sizeChart: any
   price: number
   soldout?: boolean
   variants: Variant[]

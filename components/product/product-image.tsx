@@ -4,13 +4,13 @@ import Image from 'next/image'
 
 interface Props {
   images: string[]
-  soldout: boolean
+  sizeChart: string
 }
 
-export default function ProductImage({ images, soldout }: Props) {
+export default function ProductImage({ images, sizeChart }: Props) {
   return (
     <div className="lg:flex-[35%] relative">
-      <ImageGallery images={images} />
+      <ImageGallery images={images} sizeChart={sizeChart} />
       {/* {soldout && (
         <div className="absolute top-[20%] right-0 w-10 h-32 bg-white text-black flex justify-center items-center ">
           <h6 className="uppercase font-light text-sm -rotate-90 ml-1">

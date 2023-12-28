@@ -25,7 +25,7 @@ export default function ProductPage({
   settings,
 }: PostPageProps) {
   const images = product?.pictures.map((pic) => pic.asset._ref)
-  const router = useRouter()
+  const sizeChart = product?.sizeChart?.asset?._ref
 
   const slug = product?.slug
 
@@ -37,7 +37,7 @@ export default function ProductPage({
     <>
       <ProductPageHead product={product} settings={settings} />
       <Container>
-        <ProductImage images={images} soldout={product.soldout} />
+        <ProductImage images={images} sizeChart={sizeChart} />
         <DetailsWrapper>
           <ProductVariant product={product} />
           {/* price column */}
