@@ -11,7 +11,7 @@ export default function ShowcasePageHead({ settings }: ShowcasePageHeadProps) {
 
   return (
     <Head>
-      <title>{`Showcase | ${title}`}</title>
+      <title>{`About | ${title}`}</title>
     </Head>
   )
 }

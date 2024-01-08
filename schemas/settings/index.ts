@@ -90,6 +90,14 @@ export default defineType({
     }),
 
     defineField({
+      name: 'aboutImage',
+      title: 'About Image',
+      type: 'image',
+      options: { hotspot: true },
+      validation: (rule) => rule.required(),
+    }),
+
+    defineField({
       name: 'ogImage',
       title: 'Open Graph Image',
       description:

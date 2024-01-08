@@ -1,4 +1,4 @@
-import ShowcasePage from 'components/showcase/showcase-page'
+import AboutPage from 'components/about/about-page'
 import { readToken } from 'lib/sanity.api'
 import { getAllProducts, getClient, getSettings } from 'lib/sanity.client'
 import { Product, Settings } from 'lib/sanity.queries'
@@ -21,7 +21,7 @@ const Page: NextPageWithLayout<PageProps> = (props) => {
 
   console.log(settings)
 
-  return <div />
+  return <AboutPage settings={settings} />
 }
 
 Page.getLayout = (page) => <Template>{page}</Template>

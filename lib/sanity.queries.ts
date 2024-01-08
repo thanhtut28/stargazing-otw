@@ -35,6 +35,7 @@ const settingsFields = groq`
   heroImages,
   featuredImages,
   partnersImages,
+  aboutImage,
   "heroVideo": heroVideo.asset->url,
 `
 
@@ -110,6 +111,7 @@ export interface Settings {
   heroVideo: any
   featuredImages: any[]
   partnersImages: any[]
+  aboutImage: any
 }
 
 export interface Product {

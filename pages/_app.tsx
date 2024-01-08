@@ -2,6 +2,7 @@ import 'tailwindcss/tailwind.css'
 
 import { lazy, StrictMode } from 'react'
 import { AppPropsWithLayout } from 'types/global'
+import Head from 'next/head'
 
 export interface SharedPageProps {
   draftMode: boolean
@@ -22,6 +23,10 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
 
   return (
     <>
+      <Head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+      </Head>
+
       {draftMode ? (
         <PreviewProvider token={token}>
           <Component {...pageProps} />

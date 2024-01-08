@@ -1,9 +1,11 @@
-import { motion } from 'framer-motion'
+interface TitleProps {
+  title: string
+}
 
-export default function Title() {
+export default function Title({ title }: TitleProps) {
   return (
     <h2 className="font-sans text-[16vw] w-fit tracking-tighter font-bold uppercase">
-      Showcase
+      {title}
     </h2>
   )
 }

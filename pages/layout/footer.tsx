@@ -20,13 +20,18 @@ const Footer: React.FC<Props> = ({ className }) => {
           <h6 className="text-secondary text-sm">Follow us on</h6>
           <div className="flex gap-2 text-white text-xs">
             <p>
-              <a href="" className="underline">
+              <a
+                href="https://www.facebook.com/profile.php?id=100089591902452"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
                 Facebook
               </a>
             </p>
             <p>
               <a
-                href="https://www.facebook.com/profile.php?id=100089591902452"
+                href="https://www.instagram.com/stargazing.otw/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline"
