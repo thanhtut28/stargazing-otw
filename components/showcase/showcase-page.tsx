@@ -36,7 +36,7 @@ export default function ShowcasePage(props: IndexPageProps) {
                     <h6 className="py-3 uppercase text-secondary text-lg">
                       {product.itemType}
                     </h6>
-                    <h3 className="font-heading text-6xl pb-2">
+                    <h3 className="font-heading text-center w-3/4 text-5xl md:text-6xl leading-tight py-4">
                       {product.name}
                     </h3>
 

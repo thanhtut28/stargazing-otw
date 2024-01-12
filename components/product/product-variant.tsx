@@ -48,7 +48,7 @@ const ProductHeading = ({
   return (
     <div className="py-4">
       <div className="pl-5">
-        <h2 className="font-heading text-6xl leading-tight md:text-8xl lg:text-9xl lg:[word-spacing:99rem]">
+        <h2 className="font-heading text-6xl sm:w-3/4 lg:w-full leading-tight md:text-7xl lg:text-8xl lg:[word-spacing:99rem]">
           {name}
         </h2>
         <div className="text-disabled flex flex-col ml-2 -mt-1 lg:mr-5">

@@ -1,4 +1,5 @@
 import Reveal from 'components/utils/reveal'
+import Time from 'components/utils/time'
 import Image from 'next/image'
 
 import logoSrc from '../../public/assets/text-logo.png'
@@ -20,9 +21,8 @@ export default function HeroSection({ heroVideo }: HeroProps) {
         />
 
         <Reveal>
-          <p className="text-center text-secondary p-10 py-16 lg:p-5 sm:text-lg md:p-14 md:text-xl lg:text-3xl leading-snug lg:w-1/2 mx-auto">
-            Discover a curated selection of streetwear essentials from our local
-            brand. Explore our collection now and redefine your urban aesthetic.
+          <p className="text-center text-secondary leading-snug mx-auto py-20 text-sm sm:text-lg md:text-xl lg:text-2xl lg:w-1/2 ">
+            <Time />
           </p>
         </Reveal>
       </div>
