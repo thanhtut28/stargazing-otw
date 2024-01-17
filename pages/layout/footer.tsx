@@ -13,7 +13,7 @@ const Footer: React.FC<Props> = ({ className }) => {
       )}
     >
       <h6 className="text-white text-center font-heading text-xl md:text-2xl lg:text-3xl">
-        They Stargazed about rich life.
+        They stargazed about rich life.
       </h6>
       <div className="flex justify-center py-12 items-center">
         <div className="flex flex-col justify-center items-center">
