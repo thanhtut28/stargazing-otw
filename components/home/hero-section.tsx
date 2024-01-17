@@ -12,16 +12,16 @@ interface HeroProps {
 export default function HeroSection({ heroVideo }: HeroProps) {
   return (
     <>
-      <div className="flex flex-col justify-between mt-10 lg:mt-0">
+      <div className="flex flex-col items-center justify-between mt-10 lg:mt-0">
         <Image
-          className="w-full aspect-[3/1] object-cover"
+          className="w-2/3 aspect-[3/1] object-cover"
           alt={`Featured Photo for ${logoSrc}`}
           src={logoSrc}
           priority
         />
 
         <Reveal>
-          <p className="text-center text-secondary leading-snug mx-auto py-20 text-sm sm:text-lg md:text-xl lg:text-2xl lg:w-1/2 ">
+          <p className="text-center text-secondary leading-snug mx-auto pb-20 text-sm sm:text-lg md:text-xl lg:text-2xl lg:w-1/2 ">
             <Time />
           </p>
         </Reveal>
