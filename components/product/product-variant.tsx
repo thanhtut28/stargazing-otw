@@ -51,9 +51,9 @@ const ProductHeading = ({
         <h2 className="font-heading text-6xl sm:w-3/4 lg:w-full leading-tight md:text-7xl lg:text-8xl lg:[word-spacing:99rem]">
           {name}
         </h2>
-        <div className="text-disabled flex flex-col ml-2 -mt-1 lg:mr-5">
-          <h6 className="uppercase text-primary font-semibold">{itemType}</h6>
-          <p className="text-xs font-light">
+        <div className=" flex flex-col ml-2 -mt-1 lg:mr-5">
+          <h6 className="uppercase text-secondary font-semibold">{itemType}</h6>
+          <p className="text-xs text-disabled font-light">
             <ProductDate dateString={releaseDate} />
           </p>
         </div>
