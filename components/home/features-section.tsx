@@ -46,7 +46,7 @@ export default function FeaturesSection({ featuredImages }: Props) {
       </div>
 
       <div className="py-20 lg:py-32 max-w-3xl">
-        <div className="relative z-10 w-3/5 aspect-[10/16] rotate-3">
+        <div className="relative z-10 w-4/5 lg:w-3/5 aspect-[10/16] -rotate-6">
           <Image
             className="w-full object-cover grayscale"
             alt={`Featured Photo for ${firstImage}`}
@@ -54,7 +54,7 @@ export default function FeaturesSection({ featuredImages }: Props) {
             fill
           />
         </div>
-        <div className="flex justify-end">
+        {/* <div className="flex justify-end">
           <div className="relative z-0 -mt-10 w-5/6 aspect-[11/16] -rotate-3">
             <Image
               className="w-full object-cover grayscale"
@@ -63,7 +63,7 @@ export default function FeaturesSection({ featuredImages }: Props) {
               fill
             />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   )
