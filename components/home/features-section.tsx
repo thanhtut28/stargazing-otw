@@ -24,7 +24,8 @@ export default function FeaturesSection({ featuredImages }: Props) {
             Stargazing
           </span>
           is founded by a group of people in MYANMAR who are passionate in
-          creating vintage clothing.
+          creating streetwear clothing with a theme centered around crimes and
+          criminals.
         </p>
       </Reveal>
 

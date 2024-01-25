@@ -42,9 +42,14 @@ const Footer: React.FC<Props> = ({ className }) => {
           </div>
         </div>
       </div>
-      <p className="uppercase text-disabled text-2xs text-center pb-6">
-        &copy; copyright stargazing 2023
-      </p>
+      <div className="flex items-center justify-center pb-6 gap-0.5">
+        <span className="text-disabled mt-0.5 text-2xs flex justify-center items-center">
+          &copy;
+        </span>
+        <p className="uppercase text-disabled text-2xs text-center">
+          copyright stargazing 2023
+        </p>
+      </div>
     </footer>
   )
 }

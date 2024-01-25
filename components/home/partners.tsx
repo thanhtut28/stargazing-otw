@@ -33,13 +33,13 @@ export default Partners
 
 const RetailHeader = () => (
   <div className="whitespace-nowrap overflow-x-hidden flex">
-    <h2 className="font-sans text-[20vw] pr-[7vw] relative tracking-tighter font-bold uppercase animate-marquee">
+    <h2 className="font-sans text-[12vw] pr-[5vw] relative tracking-tighter font-bold uppercase animate-marquee">
       Retail Partners
     </h2>
-    <h2 className="font-sans text-[20vw] pr-[7vw] relative tracking-tighter font-bold uppercase animate-marquee">
+    <h2 className="font-sans text-[12vw] pr-[5vw] relative tracking-tighter font-bold uppercase animate-marquee">
       Retail Partners
     </h2>
-    <h2 className="font-sans text-[20vw] pr-[7vw] relative tracking-tighter font-bold uppercase animate-marquee">
+    <h2 className="font-sans text-[12vw] pr-[5vw] relative tracking-tighter font-bold uppercase animate-marquee">
       Retail Partners
     </h2>
   </div>

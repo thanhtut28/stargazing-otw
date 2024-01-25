@@ -17,22 +17,15 @@ export default function ShowcasePage(props: IndexPageProps) {
 
   const aboutImgSrc = settings?.aboutImage?.asset?._ref
 
-  console.log(aboutImgSrc)
-
   return (
     <>
       <AboutPageHead settings={settings} />
 
       <Container>
         <TitleC title="about us" />
-        <div className="flex py-10 px-2 sm:px-4 md:px-8 lg:px-10 max-w-screen-lg mx-auto gap-4 items-stretch">
+        <div className="flex flex-col-reverse py-10 px-2 sm:px-4 md:px-8 lg:px-10 max-w-screen-lg mx-auto gap-4 items-stretch">
           <div className="flex-1">
-            <div className="flex flex-col justify-between h-full">
-              <p className="text-xs sm:text-sm md:text-lg">
-                Discover a curated selection of streetwear essentials from our
-                local brand. Explore our collection now and redefine your urban
-                aesthetic.
-              </p>
+            <div className="flex flex-col  justify-between h-full">
               <div className="flex flex-col items-end">
                 <h6 className="text-xs md:text-sm lg:text-base text-secondary">
                   Founded In
@@ -42,7 +35,7 @@ export default function ShowcasePage(props: IndexPageProps) {
             </div>
           </div>
           <div className="flex-1">
-            <div className="relative w-full aspect-[2/3]">
+            <div className="relative w-full aspect-video">
               <Image
                 className="w-full object-cover grayscale"
                 alt={`About Photo`}
