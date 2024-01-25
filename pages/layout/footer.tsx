@@ -43,7 +43,7 @@ const Footer: React.FC<Props> = ({ className }) => {
         </div>
       </div>
       <div className="flex items-center justify-center pb-6 gap-0.5">
-        <span className="text-disabled mt-0.5 text-2xs flex justify-center items-center">
+        <span className="text-disabled mt-[2px] md:mt-0 text-2xs flex justify-center items-center">
           &copy;
         </span>
         <p className="uppercase text-disabled text-2xs text-center">
