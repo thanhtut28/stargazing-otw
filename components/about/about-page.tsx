@@ -12,7 +12,7 @@ export interface IndexPageProps {
   settings: Settings
 }
 
-export default function ShowcasePage(props: IndexPageProps) {
+export default function AboutPage(props: IndexPageProps) {
   const { settings } = props
 
   const aboutImgSrc = settings?.aboutImage?.asset?._ref
