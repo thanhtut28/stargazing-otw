@@ -3,6 +3,7 @@ import 'tailwindcss/tailwind.css'
 import { lazy, StrictMode } from 'react'
 import { AppPropsWithLayout } from 'types/global'
 import Head from 'next/head'
+import { Analytics } from '@vercel/analytics/next';
 
 export interface SharedPageProps {
   draftMode: boolean
@@ -43,6 +44,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
             <Link href="/showcase">Showcase</Link>{' '}
           </nav> */}
           {getLayout(<Component {...pageProps} />)}
+          <Analytics />
         </StrictMode>
       )}
     </>
